@@ -11,13 +11,27 @@ public class rss2speech {
 		
 		
 		for (int i = 0; i<title.size(); i++){
-			System.out.println(title.get(i));
-			new tts(title.get(i));
-			System.out.println(description.get(i));
-			new tts(description.get(i));
+			//System.out.println(title.get(i));
+			//new tts(title.get(i));
+			//System.out.println(description.get(i));
+			//new tts(description.get(i));
 			
 		}
 		
+		getRSS CNN = new getRSS("http://rss.cnn.com/rss/edition_world.rss");
 		
+		ArrayList<String> CNNtitle = CNN.returnTitles();
+		
+		for (String s:CNNtitle){
+			//System.out.println(s);
+		}
+		
+		getRSS weather = new getRSS("http://www.rssweather.com/wx/ro/bucuresti/rss.php");
+		
+		ArrayList<String> weatherNow = weather.returnTitles();
+		//System.out.println(weather.returnRawRSS());
+		for (String s:weatherNow){
+			if (s.toLowerCase().contains("bucuresti")!=false)  System.out.println(s);
+		}
 	}
 }
