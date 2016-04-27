@@ -52,9 +52,9 @@ public class getRSS {
             	//System.out.println(description.getValue());
             }
 		} catch (JDOMException e){
-			//
+			System.out.println(e);
 		} catch (IOException e){
-			//
+			System.out.println(e);
 		}
 	}
 	
