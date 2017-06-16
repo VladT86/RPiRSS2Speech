@@ -30,7 +30,6 @@ public class getRSS {
 		    xml = builder.toString();
 		    this.readXML();
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -48,8 +47,6 @@ public class getRSS {
             	Element description = item.getChild("description");
             	Titles.add(title.getValue());
             	Descriptions.add(description.getValue());
-            	//System.out.println(title.getValue());
-            	//System.out.println(description.getValue());
             }
 		} catch (JDOMException e){
 			System.out.println(e);
